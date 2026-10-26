@@ -1,0 +1,25 @@
+﻿<form method="post" enctype="application/x-www-form-urlencoded" defaultbutton="a">
+<input type="hidden" name="mode" value="deletefile" />
+<input type="hidden" name="id" value="{ID}" />
+<div style="min-height: 300px; overflow-x: scroll;">
+    <ul>
+        {Files}
+    </ul>
+</div>
+    
+    <br />
+    
+    {notice:badpassword}
+    
+    <br />
+    
+    <label for="password">{lang:password}</label>
+    
+    <input id="password" type="password" name="pwd" />
+    
+    {captcha}
+    
+    <br />
+    
+    <input id="a" type="submit" class="button" value="{lang:deletefile}" />
+</form>

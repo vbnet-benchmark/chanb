@@ -1,0 +1,1 @@
+﻿<%@ Page Language="VB" AutoEventWireup="false" CodeBehind="img.aspx.vb" Inherits="chanb._img" %>

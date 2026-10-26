@@ -1,0 +1,1 @@
+﻿<%@ Page Language="VB" AutoEventWireup="false" CodeBehind="deletepost.aspx.vb" Inherits="chanb._deletepost" %>

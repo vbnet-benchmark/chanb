@@ -1,0 +1,486 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{33C2ECE5-4CEA-4686-B35B-65569309A117}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>chanb</RootNamespace>
+    <AssemblyName>chanb</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <MyType>Custom</MyType>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>On</OptionStrict>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>chanb.xml</DocumentationFile>
+    <NoWarn>
+    </NoWarn>
+    <WarningsAsErrors>41998,41999,42004,42016,42017,42018,42019,42020,42021,42022,42024,42026,42029,42031,42032,42036,42099,42105,42106,42107</WarningsAsErrors>
+    <Optimize>true</Optimize>
+    <RemoveIntegerChecks>true</RemoveIntegerChecks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>chanb.xml</DocumentationFile>
+    <NoWarn>
+    </NoWarn>
+    <WarningsAsErrors>41998,41999,42004,42016,42017,42018,42019,42020,42021,42022,42024,42026,42029,42031,42032,42036,42099,42105,42106,42107</WarningsAsErrors>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CCore, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Desktop\New folder\CCore\CCore\bin\Release\CCore.dll</HintPath>
+    </Reference>
+    <Reference Include="Svg, Version=0.5.2.3247, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Svg.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TallComponents.PDF.Rasterizer, Version=3.0.81.0, Culture=neutral, PublicKeyToken=76bf2dedaa68ccb5, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\TallComponents.PDF.Rasterizer.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Security" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Collections.Specialized" />
+    <Import Include="System.Configuration" />
+    <Import Include="System.Text" />
+    <Import Include="System.Text.RegularExpressions" />
+    <Import Include="System.Web" />
+    <Import Include="System.Web.Caching" />
+    <Import Include="System.Web.SessionState" />
+    <Import Include="System.Web.Security" />
+    <Import Include="System.Web.Profile" />
+    <Import Include="System.Web.UI" />
+    <Import Include="System.Web.UI.WebControls" />
+    <Import Include="System.Web.UI.WebControls.WebParts" />
+    <Import Include="System.Web.UI.HtmlControls" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="adminaction.aspx" />
+    <Content Include="api.aspx" />
+    <Content Include="archive.aspx" />
+    <Content Include="captcha.aspx" />
+    <Content Include="catalog.aspx" />
+    <Content Include="default.aspx" />
+    <Content Include="faq.aspx" />
+    <Content Include="img.aspx" />
+    <Content Include="installer.aspx" />
+    <Content Include="MakeAllStatic.aspx" />
+    <Content Include="css\mobile.css" />
+    <Content Include="res\bgdark.png" />
+    <Content Include="res\bggrey.png" />
+    <Content Include="res\bgwhite.png" />
+    <Content Include="res\locked.png" />
+    <Content Include="res\sticky.png" />
+    <Content Include="login.aspx" />
+    <Content Include="modaction.aspx" />
+    <Content Include="post.aspx" />
+    <Content Include="js\scripts.js" />
+    <Content Include="css\grey.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="adminaction.aspx.designer.vb">
+      <DependentUpon>adminaction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminaction.aspx.vb">
+      <DependentUpon>adminaction.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="api.aspx.designer.vb">
+      <DependentUpon>api.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api.aspx.vb">
+      <DependentUpon>api.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="archive.aspx.designer.vb">
+      <DependentUpon>archive.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="archive.aspx.vb">
+      <DependentUpon>archive.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="panel.aspx.designer.vb">
+      <DependentUpon>panel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="panel.aspx.vb">
+      <DependentUpon>panel.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="vb\BanData.vb" />
+    <Compile Include="banned.aspx.designer.vb">
+      <DependentUpon>banned.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="banned.aspx.vb">
+      <DependentUpon>banned.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="captcha.aspx.designer.vb">
+      <DependentUpon>captcha.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="captcha.aspx.vb">
+      <DependentUpon>captcha.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="vb\Captcha.vb" />
+    <Compile Include="catalog.aspx.designer.vb">
+      <DependentUpon>catalog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="catalog.aspx.vb">
+      <DependentUpon>catalog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="vb\ChanbCaptcha.vb" />
+    <Compile Include="vb\CustomFileHandler.vb" />
+    <Compile Include="vb\DatabaseEngine.vb" />
+    <Compile Include="vb\DataInitializer.vb" />
+    <Compile Include="vb\DBInitializer.vb" />
+    <Compile Include="default.aspx.designer.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="default.aspx.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="deletefile.aspx.designer.vb">
+      <DependentUpon>deletefile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="deletefile.aspx.vb">
+      <DependentUpon>deletefile.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="deletepost.aspx.designer.vb">
+      <DependentUpon>deletepost.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="deletepost.aspx.vb">
+      <DependentUpon>deletepost.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="dscripts.aspx.designer.vb">
+      <DependentUpon>dscripts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="dscripts.aspx.vb">
+      <DependentUpon>dscripts.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="error.aspx.designer.vb">
+      <DependentUpon>error.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="error.aspx.vb">
+      <DependentUpon>error.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="faq.aspx.designer.vb">
+      <DependentUpon>faq.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="faq.aspx.vb">
+      <DependentUpon>faq.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="fileHandler.ashx.vb">
+      <DependentUpon>fileHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.vb">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="vb\GlobalFunctions.vb" />
+    <Compile Include="vb\GlobalVariables.vb" />
+    <Compile Include="vb\GoogleCaptcha.vb" />
+    <Compile Include="vb\HTMLParameters.vb" />
+    <Compile Include="img.aspx.designer.vb">
+      <DependentUpon>img.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="img.aspx.vb">
+      <DependentUpon>img.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="vb\InstallActions.vb" />
+    <Compile Include="installer.aspx.designer.vb">
+      <DependentUpon>installer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="installer.aspx.vb">
+      <DependentUpon>installer.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="vb\JSONAPI.vb" />
+    <Compile Include="vb\LangEngine.vb" />
+    <Compile Include="vb\Language.vb" />
+    <Compile Include="vb\LoginInfo.vb" />
+    <Compile Include="MakeAllStatic.aspx.designer.vb">
+      <DependentUpon>MakeAllStatic.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MakeAllStatic.aspx.vb">
+      <DependentUpon>MakeAllStatic.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="vb\Misc.vb" />
+    <Compile Include="login.aspx.designer.vb">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="login.aspx.vb">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="modaction.aspx.designer.vb">
+      <DependentUpon>modaction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="modaction.aspx.vb">
+      <DependentUpon>modaction.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="modEditpost.aspx.designer.vb">
+      <DependentUpon>modEditpost.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="modEditpost.aspx.vb">
+      <DependentUpon>modEditpost.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="modSelectBanReason.aspx.designer.vb">
+      <DependentUpon>modSelectBanReason.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="modSelectBanReason.aspx.vb">
+      <DependentUpon>modSelectBanReason.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\MyExtensions\MyWebExtension.vb">
+      <VBMyExtensionTemplateID>Microsoft.VisualBasic.Web.MyExtension</VBMyExtensionTemplateID>
+      <VBMyExtensionTemplateVersion>1.0.0.0</VBMyExtensionTemplateVersion>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="vb\OPDATA.vb" />
+    <Compile Include="post.aspx.designer.vb">
+      <DependentUpon>post.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="post.aspx.vb">
+      <DependentUpon>post.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="vb\PanelModule.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="vb\post.vb">
+    </Compile>
+    <Compile Include="report.aspx.designer.vb">
+      <DependentUpon>report.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="report.aspx.vb">
+      <DependentUpon>report.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="vb\Report.vb">
+    </Compile>
+    <Compile Include="vb\textParser.vb" />
+    <Compile Include="vb\ThreadReplies.vb" />
+    <Compile Include="vb\unixcrypt.vb" />
+    <Compile Include="vb\ValueStore.vb" />
+    <Compile Include="vb\WordFilter.vb" />
+    <Compile Include="vb\WPostImage.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="css\catalog.css" />
+    <Content Include="chanbCaptchaTemplate.htm" />
+    <Content Include="deletefile.aspx" />
+    <Content Include="dscripts.aspx" />
+    <Content Include="error.aspx" />
+    <Content Include="js\extension.js" />
+    <Content Include="fileHandler.ashx" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <Content Include="banned.aspx" />
+    <Content Include="deletepost.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="css\gold.css" />
+    <Content Include="js\libs\jquery-ui.min.js" />
+    <Content Include="js\libs\jquery.min.js" />
+    <Content Include="js\libs\noworker.nude.min.js" />
+    <Content Include="js\libs\worker.nude.js" />
+    <Content Include="js\libs\xregexp-min.js" />
+    <Content Include="js\pr\lang-all.js" />
+    <Content Include="js\pr\langs\lang-apollo.js" />
+    <Content Include="js\pr\langs\lang-basic.js" />
+    <Content Include="js\pr\langs\lang-clj.js" />
+    <Content Include="js\pr\langs\lang-css.js" />
+    <Content Include="js\pr\langs\lang-dart.js" />
+    <Content Include="js\pr\langs\lang-erlang.js" />
+    <Content Include="js\pr\langs\lang-go.js" />
+    <Content Include="js\pr\langs\lang-hs.js" />
+    <Content Include="js\pr\langs\lang-lisp.js" />
+    <Content Include="js\pr\langs\lang-llvm.js" />
+    <Content Include="js\pr\langs\lang-lua.js" />
+    <Content Include="js\pr\langs\lang-matlab.js" />
+    <Content Include="js\pr\langs\lang-ml.js" />
+    <Content Include="js\pr\langs\lang-mumps.js" />
+    <Content Include="js\pr\langs\lang-n.js" />
+    <Content Include="js\pr\langs\lang-pascal.js" />
+    <Content Include="js\pr\langs\lang-proto.js" />
+    <Content Include="js\pr\langs\lang-r.js" />
+    <Content Include="js\pr\langs\lang-rd.js" />
+    <Content Include="js\pr\langs\lang-scala.js" />
+    <Content Include="js\pr\langs\lang-scm.js" />
+    <Content Include="js\pr\langs\lang-sql.js" />
+    <Content Include="js\pr\langs\lang-tcl.js" />
+    <Content Include="js\pr\langs\lang-tex.js" />
+    <Content Include="js\pr\langs\lang-vb.js" />
+    <Content Include="js\pr\langs\lang-vhdl.js" />
+    <Content Include="js\pr\langs\lang-wiki.js" />
+    <Content Include="js\pr\langs\lang-xq.js" />
+    <Content Include="js\pr\langs\lang-yaml.js" />
+    <Content Include="js\pr\prettify.css" />
+    <Content Include="js\pr\prettify.js" />
+    <Content Include="panel.aspx" />
+    <Content Include="templates\audio_file.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="templates\banned_page.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="templates\scratch\catalog_item.html" />
+    <Content Include="templates\scratch\Copy of modSBR.html" />
+    <Content Include="templates\delete_file_page.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="templates\delete_post_page.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="templates\edit_post_page.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="templates\scratch\errorPageTemplate.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="templates\full_page.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="templates\scratch\GenericMessageTemplate.html" />
+    <Content Include="templates\image_file.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="templates\modSBR.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="templates\op_post.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="templates\scratch\panelTemplate.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="templates\reply_post.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="templates\scratch\qrTemplate.html" />
+    <Content Include="templates\report_page.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="templates\files_rotator.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="templates\scratch\scratch.htm" />
+    <Content Include="templates\thread.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="templates\video_file.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="modEditpost.aspx" />
+    <Content Include="modSelectBanReason.aspx" />
+    <Content Include="report.aspx" />
+    <Content Include="js\sfw.js" />
+    <Content Include="web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v9.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>63499</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

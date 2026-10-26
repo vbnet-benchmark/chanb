@@ -1,0 +1,1 @@
+﻿<%@ Page Language="vb"  AutoEventWireup="false" CodeBehind="banned.aspx.vb" Inherits="chanb._banned" %>
