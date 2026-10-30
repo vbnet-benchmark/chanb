@@ -2,7 +2,9 @@
 
 ' Enable PDF Thumbnail generation
 ' Require TallComponent PDFRasterizer
-#Const EnablePDF = True
+' Disabled: TallComponents.PDF.Rasterizer is a commercial library that is not included in the repository
+' (equivalent to the author's "without pdf support" build in "compiled files").
+#Const EnablePDF = False
 
 Friend Module GlobalFunctions
 
@@ -4675,6 +4677,12 @@ Friend Module GlobalFunctions
     End Class
 
 #End Region
+
+    ' Moved here from vb\Misc.vb (unchanged) so it can also be called as GlobalFunctions.Delete_File_Fromdisk
+    ' (modaction.aspx.vb). It cannot exist in both modules, because unqualified calls would become ambiguous.
+    Friend Sub Delete_File_Fromdisk(ByVal path As String)
+        If IO.File.Exists(path) Then IO.File.Delete(path)
+    End Sub
 
 End Module
 

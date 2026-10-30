@@ -267,9 +267,7 @@ Friend Module Misc
 
     End Class
 
-    Friend Sub Delete_File_Fromdisk(ByVal path As String)
-        If IO.File.Exists(path) Then IO.File.Delete(path)
-    End Sub
+    ' Delete_File_Fromdisk moved to vb\GlobalFunctions.vb
 
 End Module
 

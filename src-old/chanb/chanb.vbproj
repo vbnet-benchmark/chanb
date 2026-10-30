@@ -10,7 +10,8 @@
     <OutputType>Library</OutputType>
     <RootNamespace>chanb</RootNamespace>
     <AssemblyName>chanb</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <!-- Retargeted from v3.5 to v4.8: the code uses .NET 4.0+ APIs (e.g. disposable RandomNumberGenerator, String.Join(IEnumerable)) -->
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <MyType>Custom</MyType>
     <OptionExplicit>On</OptionExplicit>
     <OptionCompare>Binary</OptionCompare>
@@ -42,13 +43,15 @@
     <WarningsAsErrors>41998,41999,42004,42016,42017,42018,42019,42020,42021,42022,42024,42026,42029,42031,42032,42036,42099,42105,42106,42107</WarningsAsErrors>
   </PropertyGroup>
   <ItemGroup>
+    <!-- CCore and Svg ship with the repository in "compiled files\dlls".
+         CCore.dll also bundles MySql.Data, Newtonsoft.Json, ExifLib and MarkdownSharp, so no separate references are needed. -->
     <Reference Include="CCore, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\Desktop\New folder\CCore\CCore\bin\Release\CCore.dll</HintPath>
+      <HintPath>..\compiled files\dlls\CCore.dll</HintPath>
     </Reference>
     <Reference Include="Svg, Version=0.5.2.3247, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Svg.dll</HintPath>
+      <HintPath>..\compiled files\dlls\svg.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -62,10 +65,7 @@
     </Reference>
     <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
-    <Reference Include="TallComponents.PDF.Rasterizer, Version=3.0.81.0, Culture=neutral, PublicKeyToken=76bf2dedaa68ccb5, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\TallComponents.PDF.Rasterizer.dll</HintPath>
-    </Reference>
+    <!-- TallComponents.PDF.Rasterizer (commercial, not in the repository) removed: PDF thumbnails are disabled via EnablePDF in vb\GlobalFunctions.vb -->
   </ItemGroup>
   <ItemGroup>
     <Import Include="Microsoft.VisualBasic" />
@@ -101,7 +101,6 @@
     <Content Include="faq.aspx" />
     <Content Include="img.aspx" />
     <Content Include="installer.aspx" />
-    <Content Include="MakeAllStatic.aspx" />
     <Content Include="css\mobile.css" />
     <Content Include="res\bgdark.png" />
     <Content Include="res\bggrey.png" />
@@ -242,13 +241,6 @@
     <Compile Include="vb\LangEngine.vb" />
     <Compile Include="vb\Language.vb" />
     <Compile Include="vb\LoginInfo.vb" />
-    <Compile Include="MakeAllStatic.aspx.designer.vb">
-      <DependentUpon>MakeAllStatic.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="MakeAllStatic.aspx.vb">
-      <DependentUpon>MakeAllStatic.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
-    </Compile>
     <Compile Include="vb\Misc.vb" />
     <Compile Include="login.aspx.designer.vb">
       <DependentUpon>login.aspx</DependentUpon>
@@ -393,59 +385,20 @@
     <Content Include="js\pr\prettify.css" />
     <Content Include="js\pr\prettify.js" />
     <Content Include="panel.aspx" />
-    <Content Include="templates\audio_file.html">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="templates\banned_page.html">
+    <!-- The templates are kept in the repository at ..\templates. They are linked as templates\*.html,
+         so publishing places them in templates\ at the site root, where DataInitializer reads them. -->
+    <Content Include="..\templates\*.html">
+      <Link>templates\%(Filename)%(Extension)</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="templates\scratch\catalog_item.html" />
     <Content Include="templates\scratch\Copy of modSBR.html" />
-    <Content Include="templates\delete_file_page.html">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="templates\delete_post_page.html">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="templates\edit_post_page.html">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="templates\scratch\errorPageTemplate.html">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="templates\full_page.html">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="templates\scratch\GenericMessageTemplate.html" />
-    <Content Include="templates\image_file.html">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="templates\modSBR.html">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="templates\op_post.html">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="templates\scratch\panelTemplate.html">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="templates\reply_post.html">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="templates\scratch\qrTemplate.html" />
-    <Content Include="templates\report_page.html">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="templates\files_rotator.html">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="templates\scratch\scratch.htm" />
-    <Content Include="templates\thread.html">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="templates\video_file.html">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    <!-- templates\scratch\errorPageTemplate.html and templates\scratch\panelTemplate.html were removed:
+         they were set to be copied to the output, but the files were never committed, which broke the build -->
+
     <Content Include="modEditpost.aspx" />
     <Content Include="modSelectBanReason.aspx" />
     <Content Include="report.aspx" />
@@ -456,7 +409,12 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
-  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v9.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- Was hardcoded to the VS2008 (v9.0) web targets; resolve them from the installed Visual Studio instead -->
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">17.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
